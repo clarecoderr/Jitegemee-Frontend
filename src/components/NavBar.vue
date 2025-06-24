@@ -1,7 +1,7 @@
 <template>
     
 <v-app-bar color ="purple"> 
-    <v-app-bar> Jitegemee University</v-app-bar>
+    <v-app-bar-title> Jitegemee University</v-app-bar-title>
     <v-btn to="/" color="black" > Home</v-btn>
     <v-btn to="/About Us" color="black" > About Us</v-btn>
     <v-btn to="/Apply" color="black" > Apply</v-btn>
