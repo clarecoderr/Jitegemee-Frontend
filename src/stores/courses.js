@@ -88,5 +88,6 @@ export const useCoursesStore = defineStore('courses',  {
         updateSelectedCourse (payload) {
             this.selectedCourse = payload
         }
-    }
+    },
+    persist: true,
 })
