@@ -1,28 +1,19 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import api from '../services/api'
 
 export const useLibraryStore = defineStore('library',  {
     state: () => {
-        const library = ref([
-            {
-                id: 1,
-                title: "Law",
-                image: "../../public/Library/download (6).jpg",
-                description: "Study legal systems, human rights, contracts, and justice — preparing students to interpret and apply the law.",
-            },
-            {
-                id: 2,
-                title: "",
-                image: "",
-                description: "",
-            },        
-        ])
+        const library = ref([])
 
         return{
             library,
         }
     }, 
     actions:{
-        
-    }
+        async fetchLibrary() {
+          const response = await api.get('getAllLibrary')
+            this.library = response.data
+        }
+    },
 })

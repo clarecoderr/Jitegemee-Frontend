@@ -1,9 +1,14 @@
 <script setup>
-    import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
 
-    import { useLibraryStore } from '../stores/library'
-    const LibraryStore = useLibraryStore() //making the events store accessible
-    const library= LibraryStore.library // linking to the events object in the store
+import { useLibraryStore } from '../stores/library'
+ const LibraryStore = useLibraryStore() //making the events store accessible
+ const library= LibraryStore.library // linking to the events object in the store
+
+    onMounted(()=>{
+  LibraryStore.fetchLibrary();
+});
+
 </script>
 
 <template>

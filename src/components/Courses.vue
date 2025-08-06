@@ -1,11 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useCoursesStore } from '../stores/courses'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const coursesStore = useCoursesStore() //making the courses accessible
 const courses= coursesStore.courses
+
+onMounted(()=>{
+  coursesStore.fetchCourses();
+});
 
 function apply(courseId){
     coursesStore.updateSelectedCourse(courseId)

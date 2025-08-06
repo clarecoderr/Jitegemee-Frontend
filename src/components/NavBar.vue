@@ -11,6 +11,8 @@
     <v-btn to="/library" color="black" > Library</v-btn>
     <v-btn to="/studentLife" color="black" > Student Life</v-btn>
     <v-btn to="/logIn" color="black" > LogIn</v-btn>
+    <v-btn to="/signUp" color="black" > SignUp</v-btn>
+
 </v-app-bar>
  
 </template>
